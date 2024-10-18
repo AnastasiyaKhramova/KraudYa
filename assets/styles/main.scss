@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: $backgroundcolor;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.container {
+    min-width: $container;
+}
+
+.second-container {
+    width: $second-container;
+    margin: 0 auto;
+}
