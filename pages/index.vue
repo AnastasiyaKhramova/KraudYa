@@ -3,6 +3,7 @@
     <Header />
     <Marquee />
     <Lection />
+    <Transformation />
 
 
   </div>
@@ -12,6 +13,7 @@
 import Marquee from "~/components/Marquee.vue";
 import Header from "../layouts/Header.vue";
 import Lection from "~/components/Lection.vue";
+import Transformation from "~/components/Transformation.vue";
 </script>
 
 <style>

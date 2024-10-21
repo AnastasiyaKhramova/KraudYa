@@ -3,25 +3,19 @@
     <div class="second-container">
       <div class="logo">
         <div>
-          <img
-            class="logo_img"
-            v-for="(n, index) in 4"
-            :key="index"
-            src="../assets/img/logo.png"
-            alt="logo"
-          />
+          <img class="logo_img" v-for="(n, index) in 4" :key="index" src="../assets/img/logo.png" alt="logo" />
         </div>
         <div class="logo_text">
           <p>клуб</p>
           <p>четырех коней</p>
         </div>
       </div>
-<div class="headding">
-    <div class="title">
-        <h1>
-          Превратите уездный город
-          <span>в столицу земного шара</span>
-        </h1>
+      <div class="headding">
+        <div class="title">
+          <h1>
+            Превратите уездный город
+            <span>в столицу земного шара</span>
+          </h1>
         </div>
         <p class="title_desc">
           Оплатите взнос на телеграммы для организации Международного
@@ -29,14 +23,10 @@
         </p>
         <div class="btn-position">
           <Button />
-          <Button
-            :buttonColor="buttonColor"
-            :textColor="textColor"
-            :btnName="btnName"
-          />
+          <Button :buttonColor="buttonColor" :textColor="textColor" :btnName="btnName" />
         </div>
       </div>
-</div>
+    </div>
   </header>
 </template>
 
@@ -45,9 +35,9 @@ import Button from "~/components/Button.vue";
 export default {
   data() {
     return {
-        btnName: "Подробнее о турнире",
+      btnName: "Подробнее о турнире",
       buttonColor: "$textcolor-light",
-            textColor: "$color-dark"
+      textColor: "$color-dark"
     };
   },
 };
@@ -61,15 +51,15 @@ export default {
 
   &::before {
     content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 700px;
-  background: url(../assets/img/background.png) no-repeat center center; 
-  background-size: cover;
-  opacity: 0.1;
-  z-index: 1; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 700px;
+    background: url(../assets/img/background.png) no-repeat center center;
+    background-size: cover;
+    opacity: 0.1;
+    z-index: 1;
   }
 }
 
@@ -103,14 +93,8 @@ export default {
   gap: 1rem;
 }
 
-.chess {
-  position: relative;
-  top: 206px;
-  left: 1112px;
-}
-
 .headding {
-width: 542px;
+  width: 542px;
 }
 
 .title {
