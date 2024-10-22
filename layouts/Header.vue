@@ -14,7 +14,7 @@
         <div class="title">
           <h1>
             Превратите уездный город
-            <span>в столицу земного шара</span>
+            <h2>в столицу <span>земного шара</span></h2>
           </h1>
         </div>
         <p class="title_desc">
@@ -23,7 +23,7 @@
         </p>
         <div class="btn-position">
           <Button />
-          <Button :buttonColor="buttonColor" :textColor="textColor" :btnName="btnName" />
+          <Button :buttonColor="buttonColor" :textColor="textColor" :btnName="btnName" style="  padding: 20px 79px;" />
         </div>
       </div>
     </div>
@@ -101,7 +101,7 @@ export default {
   margin-top: 62px;
   margin-bottom: 24px;
 
-  & h1 {
+  & h1, h2 {
     font-family: $text-font;
     font-weight: normal;
     font-size: 3.75rem;
@@ -110,9 +110,13 @@ export default {
     line-height: 110%;
   }
 
-  & span {
-    display: flex;
+  & h2 {
     text-align: center;
+  }
+
+  & span {
+    position: relative;
+    left: 18px;
   }
 
   &_desc {
