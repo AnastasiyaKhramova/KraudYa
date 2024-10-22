@@ -69,6 +69,8 @@ export default {
 <style lang="scss" scoped>
 .transform {
   position: relative;
+  margin-top: 159px;
+  margin-bottom: 200px;
   &_title {
     width: 806px;
     font-family: $text-font;
@@ -83,8 +85,11 @@ export default {
       font-family: $title-font;
       font-weight: normal;
       font-size: 1.25rem;
-      color: #3057a2;
+      color: $textcomment;
       text-transform: none;
+      padding-left: 7px;
+    line-height: 141%;
+    margin-bottom: 58px;
     }
   }
 
@@ -92,13 +97,14 @@ export default {
     display: grid;
     gap: 20px;
     grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 112px 112px 136px;
 
     &::before {
       content: "";
       position: absolute;
-      top: 134px;
-      width: 98%;
-      height: 382px;
+      top: 183px;
+      width: 100%;
+      height: 450px;
       background: url(../assets/img/background.png) no-repeat center center;
       background-size: cover;
       opacity: 0.1;
@@ -130,12 +136,12 @@ export default {
       grid-row: 3;
     }
     .block7 {
-      grid-column: 2 / span 3;
+      grid-column: 2 / span 2;
       grid-row: 3;
     }
 
     &_number {
-      width: 36px;
+      min-width: 36px;
       height: 36px;
       background: $textcolor-light;
       border-radius: 18px;
@@ -160,8 +166,8 @@ export default {
 
 .decor {
   position: absolute;
-  bottom: -4px;
-  right: -59px;
+  bottom: -2px;
+  right: -63px;
   z-index: 3;
 }
 </style>

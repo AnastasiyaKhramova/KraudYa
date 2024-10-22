@@ -9,49 +9,46 @@
         </h2>
         <img src="../assets/img/picture_1.png" alt="" />
       </div>
-      <img class="lection__img" src="../assets/img/picture_2.png" alt="" />
-      <div class="play">
-        <div class="lection__desc">
-          <h2 class="lection__desc_title" style="width: 658px">
-            и Сеанс
-            <span style="color: #f54932; font-weight: bold"
-              >одновременной игры в шахматы на 160 досках</span
-            >
-            гроссмейстера О. Бендера
-          </h2>
-          <table>
-            <tbody>
-              <tr v-for="lection in lections" :key="lection.id">
-                <td>
-                  <p>{{ lection.activity }}</p>
-                </td>
-                <td>
-                  <p>{{ lection.desc }}</p>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <p>Взнос на телеграммы:</p>
-                </td>
-                <td>
-                  <p style="display: flex; gap: 12px">
-                    <span
-                      style="
+      <div class="play-container">
+        <img class="lection__img" src="../assets/img/picture_2.png" alt="" />
+        <div class="play">
+          <div class="lection__desc">
+            <h2 class="lection__desc_title" style="width: 658px">
+              и Сеанс
+              <span style="color: #f54932; font-weight: bold">одновременной игры в шахматы на 160 досках</span>
+              гроссмейстера О. Бендера
+            </h2>
+            <table>
+              <tbody>
+                <tr v-for="lection in lections" :key="lection.id">
+                  <td>
+                    <p>{{ lection.activity }}</p>
+                  </td>
+                  <td>
+                    <p>{{ lection.desc }}</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>Взнос на телеграммы:</p>
+                  </td>
+                  <td>
+                    <p style="display: flex; gap: 12px">
+                      <span style="
                         color: #313131;
                         text-decoration: line-through #f54932;
-                      "
-                      >100 руб.</span
-                    >
-                    21 руб. 16 коп.
-                  </p>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+                      ">100 руб.</span>
+                      21 руб.16 коп.
+                    </p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="lection-question">
+            По всем вопросам обращаться в администрацию к К. Михельсону
+          </p>
         </div>
-        <p class="lection-question">
-          По всем вопросам обращаться в администрацию к К. Михельсону
-        </p>
       </div>
     </div>
   </section>
@@ -71,7 +68,7 @@ export default {
         {
           id: uuidv4(),
           activity: "Дата и время мероприятия:",
-          desc: "22 июня 1927 г. в 18:00",
+          desc: "22 июня 1927 г.в 18:00",
         },
         {
           id: uuidv4(),
@@ -92,7 +89,6 @@ export default {
 <style lang="scss" scoped>
 .lections {
   margin-top: 80px;
-  margin-bottom: 200px;
   display: flex;
   flex-direction: column;
   gap: 66px;
@@ -119,7 +115,6 @@ export default {
     height: 564px;
     display: block;
     position: relative;
-    margin-bottom: 0;
     bottom: 26px;
     left: -31px;
 
@@ -153,14 +148,16 @@ export default {
   }
 }
 
+.play-container {
+  display: flex;
+}
+
 .play {
-  width: 658px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   position: relative;
-  bottom: 629px;
-  left: 519px;
+  left: -17px;
 }
 
 table {
@@ -199,7 +196,7 @@ tr {
 .lection-question {
   font-family: $title-font;
   font-size: 1.25rem;
-  color: #3057a2;
+  color: $textcomment;
   line-height: 120%;
   margin-top: 2rem;
   position: relative;
