@@ -9,7 +9,7 @@
                             <path d="M10.5382 18.4615L2.07666 9.99995L10.5382 1.53841" stroke="white" stroke-width="2"
                                 stroke-linecap="square" />
                         </svg></button>
-                    <p class="player_page">{{itemsPerPage}}/{{ slides.length }}</p>
+                    <p class="player_page">{{ displayedItems }}/{{ slides.length }}</p>
                     <button class="controls" @click="nextSlide" :disabled="currentPage === maxPage"><svg width="12"
                             height="20" viewBox="0 0 12 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1.4618 1.5384L9.92334 9.99994L1.4618 18.4615" stroke="white" stroke-width="2"
@@ -86,6 +86,10 @@ export default {
         },
         maxPage() {
             return this.pageCount - 1;
+        },
+        displayedItems() {
+            const count = (this.currentPage + 1) * this.itemsPerPage;
+            return count > this.slides.length ? this.slides.length : count;
         }
     },
     methods: {

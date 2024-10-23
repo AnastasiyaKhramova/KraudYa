@@ -26,7 +26,7 @@
         font-family: $title-font;
         font-weight: normal;
         opacity: 60%;
-        
+        margin: 0 auto;
     }
 }
 

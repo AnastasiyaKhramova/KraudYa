@@ -69,7 +69,7 @@ export default {
 <style lang="scss" scoped>
 .transform {
   position: relative;
-  margin-top: 159px;
+  margin-top: 112px;
   margin-bottom: 200px;
   &_title {
     width: 806px;
@@ -104,7 +104,7 @@ export default {
       position: absolute;
       top: 183px;
       width: 100%;
-      height: 450px;
+      height: 400px;
       background: url(../assets/img/background.png) no-repeat center center;
       background-size: cover;
       opacity: 0.1;

@@ -23,7 +23,9 @@
         </p>
         <div class="btn-position">
           <Button />
-          <Button :buttonColor="buttonColor" :textColor="textColor" :btnName="btnName" style="  padding: 20px 79px;" />
+          <Button :buttonColor="buttonColor" :textColor="textColor" :btnName="btnName"
+            :hoverButtonColor="hoverButtonColor" :hoverTextColor="hoverTextColor" :border="border"
+            :hoverBorderColor="hoverBorderColor" style="padding: 20px 79px;" />
         </div>
       </div>
     </div>
@@ -32,12 +34,17 @@
 
 <script>
 import Button from "~/components/Button.vue";
+
 export default {
   data() {
     return {
       btnName: "Подробнее о турнире",
-      buttonColor: "$textcolor-light",
-      textColor: "$color-dark"
+      buttonColor: "var(--textcolor-light)",
+      textColor: "var(--color-dark)",
+      border: "var(--color-dark)",
+      hoverButtonColor: "var(--color-dark)",
+      hoverTextColor: "var(--textcolor-light)",
+      hoverBorderColor: "2px solid var(--color-dark)"
     };
   },
 };
@@ -45,7 +52,7 @@ export default {
 
 <style lang="scss" scoped>
 .header {
-  height: 700px;
+  min-height: 700px;
   background: url(../assets/img/main_desktop.png) no-repeat center center;
   background-size: cover;
 
@@ -55,11 +62,11 @@ export default {
     top: 0;
     left: 0;
     width: 100%;
-    height: 700px;
+    min-height: 700px;
     background: url(../assets/img/background.png) no-repeat center center;
     background-size: cover;
     opacity: 0.1;
-    z-index: 1;
+    z-index: 0;
   }
 }
 
@@ -101,7 +108,8 @@ export default {
   margin-top: 62px;
   margin-bottom: 24px;
 
-  & h1, h2 {
+  & h1,
+  h2 {
     font-family: $text-font;
     font-weight: normal;
     font-size: 3.75rem;
@@ -128,5 +136,63 @@ export default {
     margin-bottom: 40px;
     text-align: center;
   }
+}
+
+@media screen and (max-width: 375px) {
+  .header {
+    height: 774px;
+    background: url(../assets/img/main_phone.png) no-repeat center center;
+
+    &::before {
+      min-height: 812px;
+    }
+  }
+
+  .logo {
+    padding-top: 18px;
+    height: 32px;
+    font-size: 14.42px;
+
+    &_img {
+      width: 18.75px;
+      height: 27px;
+      margin-right: 1.5px;
+    }
+  }
+
+  .btn-position {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .headding {
+    width: 335px;
+  }
+
+  .title {
+    margin-top: 40px;
+
+    & h1,
+    h2 {
+      font-size: 2.25rem;
+    }
+
+    h2 {
+      position: relative;
+      left: 4px;
+    }
+
+    & span {
+      left: 11px;
+    }
+
+    &_desc {
+
+      text-align: start;
+      margin-bottom: 32px;
+    }
+  }
+
 }
 </style>

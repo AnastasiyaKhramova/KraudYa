@@ -10,7 +10,7 @@
         <img src="../assets/img/picture_1.png" alt="" />
       </div>
       <div class="play-container">
-        <img class="lection__img" src="../assets/img/picture_2.png" alt="" />
+        <img class="lection__img" src="../assets/img/picture_2.jpg" alt="" />
         <div class="play">
           <div class="lection__desc">
             <h2 class="lection__desc_title" style="width: 658px">
@@ -112,10 +112,10 @@ export default {
 
   &__img {
     width: 535px;
-    height: 564px;
+    height: 610px;
     display: block;
     position: relative;
-    bottom: 26px;
+    bottom: 50px;
     left: -31px;
 
     &::before {
@@ -201,5 +201,119 @@ tr {
   margin-top: 2rem;
   position: relative;
   right: 7px;
+}
+
+@media screen and (max-width: 375px) {
+  .lections {
+  margin-top: 75px;
+  gap: 24px;
+}
+
+.lection {
+  min-height: 250px;
+  flex-direction: column;
+
+  &_block {
+    display: flex;
+    flex-direction: column;
+  }
+
+  & span {
+    color: $spancolor;
+    font-weight: bold;
+  }
+
+  &__img {
+    width: 535px;
+    height: 610px;
+    display: block;
+    position: relative;
+    bottom: 50px;
+    left: -31px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 134px;
+      width: 98%;
+      height: 382px;
+      background: url(../assets/img/background.png) no-repeat center center;
+      background-size: cover;
+      opacity: 0.1;
+      z-index: 1;
+    }
+  }
+
+  &__desc {
+    display: flex;
+    flex-direction: column;
+    gap: 44px;
+
+    &_title {
+      width: 764px;
+      max-height: 195.43px;
+      font-family: $text-font;
+      font-weight: normal;
+      font-size: 2.25rem;
+      line-height: 135%;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.play-container {
+  display: flex;
+}
+
+.play {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  position: relative;
+  left: -17px;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+td {
+  width: 150px;
+  font-family: $title-font;
+  font-size: 1.25rem;
+  color: $textcolor-dark;
+  opacity: 70%;
+  border-right: 2px #d0d0d0 solid;
+  border-bottom: 2px #d0d0d0 solid;
+}
+
+table tr:last-child td {
+  border-bottom: 0;
+}
+
+td:last-child {
+  font-weight: bold;
+  opacity: 100%;
+  padding-left: 1rem;
+  border-right: none;
+}
+
+tr {
+  height: 56px;
+}
+
+.sale span {
+  color: $textcolor-dark;
+}
+
+.lection-question {
+  font-family: $title-font;
+  font-size: 1.25rem;
+  color: $textcomment;
+  line-height: 120%;
+  margin-top: 2rem;
+  position: relative;
+  right: 7px;
+}
 }
 </style>
