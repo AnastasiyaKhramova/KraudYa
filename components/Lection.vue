@@ -5,34 +5,20 @@
         <div class="lection__text">
           <h2 class="lection__desc_title">
             Чтобы поддержать Международный васюкинский турнир
+            <span class="lection__desc_title-span">посетите лекцию на тему:
+              <span style="color: #f54932; font-weight: bold;">«Плодотворная дебютная идея»</span></span>
           </h2>
-          <span
-            >посетите лекцию на тему:
-            <span style="color: #f54932"
-              >«Плодотворная дебютная идея»</span
-            ></span
-          >
         </div>
-        <img
-          class="lection__desc_img"
-          src="../assets/img/picture_1.png"
-          alt="picture"
-        />
+        <img class="lection__desc_img" src="../assets/img/picture_1.png" alt="picture" />
       </div>
       <div class="play-container">
-        <img
-          class="lection__img"
-          src="../assets/img/picture_2.jpg"
-          alt="picture"
-        />
+        <img class="lection__img" src="../assets/img/picture_2.jpg" alt="picture" />
         <div class="play">
           <div class="lection__desc">
             <h2 class="lection__desc_title-play">
               и Сеанс
-              <span style="color: #f54932; font-weight: bold"
-                >одновременной игры в шахматы на 160 досках</span
-              >
-              гроссмейстера О.Бендера
+              <span style="color: #f54932; font-weight: bold">одновременной игры в шахматы на 160 досках</span>
+              гроссмейстера О. Бендера
             </h2>
             <table>
               <tbody>
@@ -58,13 +44,10 @@
                   </td>
                   <td>
                     <p style="display: flex; gap: 12px">
-                      <span
-                        style="
+                      <span style="
                           color: #313131;
                           text-decoration: line-through #f54932;
-                        "
-                        >100 руб.</span
-                      >
+                        ">100 руб.</span>
                       21 руб.16 коп.
                     </p>
                   </td>
@@ -110,10 +93,10 @@ export default {
 
 <style lang="scss" scoped>
 .lections {
-  margin-top: 80px;
+  margin-top: 91px;
   display: flex;
   flex-direction: column;
-  gap: 66px;
+  gap: 54px;
 }
 
 .lection {
@@ -134,11 +117,11 @@ export default {
   }
 
   & span {
-    order: 3;
     text-transform: uppercase;
     font-family: $text-font;
-    font-size: 1.75rem;
+    font-size: 2.25rem;
     font-weight: normal;
+    line-height: 135%;
   }
 
   &__img {
@@ -227,7 +210,7 @@ td:last-child {
 }
 
 tr {
-  height: 59px;
+  height: 56px;
 }
 
 .sale span {
@@ -261,21 +244,27 @@ tr {
 
     &__img {
       width: 374px;
-      height: 436px;
-      bottom: 8px;
+      height: 433px;
+      bottom: 10px;
       left: -20px;
     }
 
     &__desc {
-      display: flex;
-      flex-direction: column;
-      gap: 44px;
-
+      gap: 56px;
       &_title {
         order: 1;
         width: 335px;
         font-size: 1.75rem;
         margin-bottom: 264px;
+
+        & span{
+          display: block;
+          font-size: 1.75rem;
+        }
+      }
+
+      &_title-span {
+        margin-top: 262px;
       }
 
       &_title-play {
@@ -284,10 +273,11 @@ tr {
       }
 
       &_img {
+        order: 2;
         width: 335px;
         height: 212.56px;
         position: relative;
-        bottom: 403px;
+        bottom: 304px;
       }
     }
   }
@@ -295,6 +285,7 @@ tr {
   .play-container {
     flex-direction: column;
   }
+
   .play {
     left: 0;
     top: -1px;
@@ -302,7 +293,7 @@ tr {
 
   table {
     border-collapse: collapse;
-    margin-top: 31px;
+    margin-top: 18px;
   }
 
   tr {
@@ -324,7 +315,7 @@ tr {
 
   tr:nth-child(n) {
     border-bottom: 2px solid #d0d0d0;
-    padding-bottom: 15px;
+    padding-bottom: 18px;
   }
 
   tr.no-break {

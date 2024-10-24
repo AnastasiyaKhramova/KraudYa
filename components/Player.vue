@@ -193,4 +193,93 @@ export default {
         text-align: center;
     }
 }
+
+@media screen and (max-width: 375px) {
+    .player {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 138px;
+
+    &__headding {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 60px;
+
+        &_title {
+            font-family: $text-font;
+            font-weight: normal;
+            font-size: 3.375rem;
+            color: $textcolor-dark;
+            text-transform: uppercase;
+        }
+
+        &_choice {
+            display: flex;
+            gap: 19px;
+            align-items: center;
+            font-family: $title-font;
+            font-weight: normal;
+            font-size: 1rem;
+            color: $textcolor-dark;
+        }
+    }
+}
+
+.controls {
+    width: 44px;
+    height: 44px;
+    background-color: $textcolor-dark;
+    border: 1px solid $textcolor-dark;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.slider {
+    display: flex;
+    gap: 20px;
+}
+
+.slide {
+    width: 394px;
+    height: 462px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__img {
+        width: 320px;
+        height: 320px;
+    }
+
+    &__title {
+        font-family: $title-font;
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: $textcolor-dark;
+        margin-top: 26px;
+        margin-bottom: 7px;
+    }
+
+    &__subtitle {
+        font-family: $title-font;
+        font-size: 1.25rem;
+        font-weight: normal;
+        color: $textcolor-dark;
+        opacity: 60%;
+        margin-bottom: 18px;
+    }
+
+    &__btn {
+        width: 113px;
+        height: 35px;
+        border: 1px solid $textcomment;
+        border-radius: 62px;
+        color: $textcomment;
+        font-family: $title-font;
+        font-size: 1rem;
+        font-weight: 500;
+        text-align: center;
+    }
+}
+}
 </style>

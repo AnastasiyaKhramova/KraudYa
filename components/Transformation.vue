@@ -6,57 +6,66 @@
         <span> Будущие источники обогащения васюкинцев </span>
       </h1>
       <div class="transform__cards">
-        <div
-          v-for="(transform, index) in transforms"
-          :key="transform.id"
-          :class="'transform__cards_block block' + (index + 1)"
-        >
+        <div v-for="(transform, index) in transforms" :key="transform.id"
+          :class="'transform__cards_block block' + (index + 1)">
           <p class="transform__cards_number">{{ transform.number }}</p>
           <p class="transform__cards_text">{{ transform.desc }}</p>
         </div>
       </div>
-      <!-- <img class="decor" src="../assets/img/airplane.png" alt="airplane" /> -->
+      <img class="decor" src="../assets/img/airplane.png" alt="airplane" />
       <Slider class="slider">
         <div class="transform__slide">
-          <p class="transform__cards_number">1</p>
-          <p class="transform__cards_text">
-            Строительство железнодорожной магистрали Москва-Васюки
-          </p>
-          <p class="transform__cards_number">2</p>
-          <p class="transform__cards_text">
-            Открытие фешенебельной гостиницы «Проходная пешка» и других
-            небоскрёбов
-          </p>
+          <div class="transform__slide_container">
+            <p class="transform__cards_number">1</p>
+            <p class="transform__cards_text">
+              Строительство железнодорожной магистрали Москва-Васюки
+            </p>
+          </div>
+          <div class="transform__slide_container">
+            <p class="transform__cards_number">2</p>
+            <p class="transform__cards_text">
+              Открытие фешенебельной гостиницы «Проходная пешка» и других небоскрёбов
+            </p>
+          </div>
         </div>
         <div class="transform__slide">
-          <p class="transform__cards_number">3</p>
-          <p class="transform__cards_text">
-            Поднятие сельского хозяйства в радиусе на тысячу километров:
-            производство овощей, фруктов, икры, шоколадных конфет
-          </p>
+          <div class="transform__slide_container">
+            <p class="transform__cards_number">3</p>
+            <p class="transform__cards_text">
+              Поднятие сельского хозяйства в радиусе на тысячу километров:
+              производство овощей, фруктов, икры, шоколадных конфет
+            </p>
+          </div>
         </div>
         <div class="transform__slide">
-          <p class="transform__cards_number">4</p>
-          <p class="transform__cards_text">Строительство дворца для турнира</p>
-          <p class="transform__cards_number">5</p>
-          <p class="transform__cards_text">
-            Размещение гаражей для гостевого автотранспорта
-          </p>
+          <div class="transform__slide_container">
+            <p class="transform__cards_number">4</p>
+            <p class="transform__cards_text">Строительство дворца для турнира</p>
+          </div>
+          <div class="transform__slide_container">
+            <p class="transform__cards_number">5</p>
+            <p class="transform__cards_text">
+              Размещение гаражей для гостевого автотранспорта
+            </p>
+          </div>
         </div>
         <div class="transform__slide">
-          <p class="transform__cards_number">6</p>
-          <p class="transform__cards_text">
-            Постройка сверхмощной радиостанции для передачи всему миру
-            сенсационных результатов
-          </p>
+          <div class="transform__slide_container">
+            <p class="transform__cards_number">6</p>
+            <p class="transform__cards_text">
+              Постройка сверхмощной радиостанции для передачи всему миру сенсационных результатов
+            </p>
+          </div>
         </div>
         <div class="transform__slide">
-          <p class="transform__cards_number">7</p>
-          <p class="transform__cards_text">
-            Создание аэропорта «Большие Васюки» с регулярным отправлением
-            почтовых самолётов и дирижаблей во все концы света, включая
-            Лос-Анжелос и Мельбурн
-          </p>
+          <div class="transform__slide_container">
+            <p class="transform__cards_number">7</p>
+            <p class="transform__cards_text">
+              Создание аэропорта «Большие Васюки» с регулярным отправлением почтовых самолётов и дирижаблей во все концы
+              света, включая
+              Лос-Анжелос и Мельбурн
+            </p>
+          </div>
         </div>
       </Slider>
     </div>
@@ -109,12 +118,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.slider {
-  display: none;
-}
 .transform {
   position: relative;
-  margin-top: 112px;
+  margin-top: 113px;
   margin-bottom: 200px;
 
   &_title {
@@ -169,18 +175,22 @@ export default {
       grid-column: 3 / span 1;
       grid-row: 1 / span 2;
     }
+
     .block4 {
       grid-column: 1;
       grid-row: 2;
     }
+
     .block5 {
       grid-column: 2;
       grid-row: 2;
     }
+
     .block6 {
       grid-column: 1;
       grid-row: 3;
     }
+
     .block7 {
       grid-column: 2 / span 2;
       grid-row: 3;
@@ -216,12 +226,8 @@ export default {
   right: -63px;
   z-index: 3;
 }
+
 @media screen and (max-width: 375px) {
-  .slider {
-    display: block;
-    width: 355px;
-    overflow: hidden;
-  }
   .transform {
     margin-top: 120px;
 
@@ -241,50 +247,43 @@ export default {
 
     &__slide {
       width: 335px;
-      height: 300px;
-      background: url(../assets/img/background-block.png);
+      max-height: 176px;
+      background: url(/_nuxt/assets/img/background-block.png);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 62px 20px;
+      gap: 28px;
 
       &::before {
-        content: "";
-        position: absolute;
         top: 231px;
         width: 100%;
         height: 300px;
-        background: url(/_nuxt/assets/img/background.png) no-repeat center
-          center;
-        background-size: cover;
-        opacity: 0.1;
         z-index: 0;
+      }
+
+      &_container {
+        width: 295px;
+        display: flex;
+        gap: 0.5rem;
       }
     }
 
     &__cards {
       display: none;
 
-      &_number {
-        min-width: 36px;
-        height: 36px;
-        background: #ffffff;
-        border-radius: 18px;
-        font-family: "Golos Text", sans-serif;
-        font-weight: 600;
-        font-size: 1.25rem;
-        color: #313131;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 1;
-        position: relative;
-      }
-
       &_text {
-        font-family: $title-font;
-        font-weight: 500;
-        font-size: 1.25rem;
-        color: $textcolor-dark;
-        max-width: 446px;
+        font-size: 1.125rem;
+        max-width: 250px;
+        padding-left: 9px;
       }
     }
+  }
+
+  .decor {
+    width: 350px;
+    top: 191px;
+    right: -24px;
   }
 }
 </style>
