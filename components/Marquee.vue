@@ -47,6 +47,8 @@
 @media screen and (max-width: 375px) {
   .marquee {
     height: 2.375rem;
+    position: relative;
+    bottom: 27px;
   }
 
   .marquee p {

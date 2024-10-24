@@ -2,21 +2,37 @@
   <section class="container">
     <div class="second-container lections">
       <div class="lection">
-        <h2 class="lection__desc_title">
-          Чтобы поддержать Международный васюкинский турнир посетите лекцию на
-          тему:
-          <span>«Плодотворная дебютная идея»</span>
-        </h2>
-        <img src="../assets/img/picture_1.png" alt="" />
+        <div class="lection__text">
+          <h2 class="lection__desc_title">
+            Чтобы поддержать Международный васюкинский турнир
+          </h2>
+          <span
+            >посетите лекцию на тему:
+            <span style="color: #f54932"
+              >«Плодотворная дебютная идея»</span
+            ></span
+          >
+        </div>
+        <img
+          class="lection__desc_img"
+          src="../assets/img/picture_1.png"
+          alt="picture"
+        />
       </div>
       <div class="play-container">
-        <img class="lection__img" src="../assets/img/picture_2.jpg" alt="" />
+        <img
+          class="lection__img"
+          src="../assets/img/picture_2.jpg"
+          alt="picture"
+        />
         <div class="play">
           <div class="lection__desc">
-            <h2 class="lection__desc_title" style="width: 658px">
+            <h2 class="lection__desc_title-play">
               и Сеанс
-              <span style="color: #f54932; font-weight: bold">одновременной игры в шахматы на 160 досках</span>
-              гроссмейстера О. Бендера
+              <span style="color: #f54932; font-weight: bold"
+                >одновременной игры в шахматы на 160 досках</span
+              >
+              гроссмейстера О.Бендера
             </h2>
             <table>
               <tbody>
@@ -28,16 +44,27 @@
                     <p>{{ lection.desc }}</p>
                   </td>
                 </tr>
+                <tr class="no-break">
+                  <td>
+                    <p>Плата за игру:</p>
+                  </td>
+                  <td>
+                    <p>50 коп.</p>
+                  </td>
+                </tr>
                 <tr>
                   <td>
                     <p>Взнос на телеграммы:</p>
                   </td>
                   <td>
                     <p style="display: flex; gap: 12px">
-                      <span style="
-                        color: #313131;
-                        text-decoration: line-through #f54932;
-                      ">100 руб.</span>
+                      <span
+                        style="
+                          color: #313131;
+                          text-decoration: line-through #f54932;
+                        "
+                        >100 руб.</span
+                      >
                       21 руб.16 коп.
                     </p>
                   </td>
@@ -75,11 +102,6 @@ export default {
           activity: "Стоимость входных билетов:",
           desc: "20 коп.",
         },
-        {
-          id: uuidv4(),
-          activity: "Плата за игру:",
-          desc: "50 коп.",
-        },
       ],
     };
   },
@@ -100,14 +122,23 @@ export default {
   align-items: center;
   justify-content: space-between;
 
+  &__text {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+
   &_block {
     display: flex;
     flex-direction: column;
   }
 
   & span {
-    color: $spancolor;
-    font-weight: bold;
+    order: 3;
+    text-transform: uppercase;
+    font-family: $text-font;
+    font-size: 1.75rem;
+    font-weight: normal;
   }
 
   &__img {
@@ -138,6 +169,16 @@ export default {
 
     &_title {
       width: 764px;
+      max-height: 195.43px;
+      font-family: $text-font;
+      font-weight: normal;
+      font-size: 2.25rem;
+      line-height: 135%;
+      text-transform: uppercase;
+    }
+
+    &_title-play {
+      width: 658px;
       max-height: 195.43px;
       font-family: $text-font;
       font-weight: normal;
@@ -186,7 +227,7 @@ td:last-child {
 }
 
 tr {
-  height: 56px;
+  height: 59px;
 }
 
 .sale span {
@@ -205,115 +246,101 @@ tr {
 
 @media screen and (max-width: 375px) {
   .lections {
-  margin-top: 75px;
-  gap: 24px;
-}
+    margin-top: 49px;
+    gap: 24px;
+    height: 1773px;
+  }
 
-.lection {
-  min-height: 250px;
-  flex-direction: column;
-
-  &_block {
-    display: flex;
+  .lection {
     flex-direction: column;
-  }
 
-  & span {
-    color: $spancolor;
-    font-weight: bold;
-  }
+    &_block {
+      display: flex;
+      flex-direction: column;
+    }
 
-  &__img {
-    width: 535px;
-    height: 610px;
-    display: block;
-    position: relative;
-    bottom: 50px;
-    left: -31px;
+    &__img {
+      width: 374px;
+      height: 436px;
+      bottom: 8px;
+      left: -20px;
+    }
 
-    &::before {
-      content: "";
-      position: absolute;
-      top: 134px;
-      width: 98%;
-      height: 382px;
-      background: url(../assets/img/background.png) no-repeat center center;
-      background-size: cover;
-      opacity: 0.1;
-      z-index: 1;
+    &__desc {
+      display: flex;
+      flex-direction: column;
+      gap: 44px;
+
+      &_title {
+        order: 1;
+        width: 335px;
+        font-size: 1.75rem;
+        margin-bottom: 264px;
+      }
+
+      &_title-play {
+        width: 335px;
+        font-size: 1.75rem;
+      }
+
+      &_img {
+        width: 335px;
+        height: 212.56px;
+        position: relative;
+        bottom: 403px;
+      }
     }
   }
 
-  &__desc {
+  .play-container {
+    flex-direction: column;
+  }
+  .play {
+    left: 0;
+    top: -1px;
+  }
+
+  table {
+    border-collapse: collapse;
+    margin-top: 31px;
+  }
+
+  tr {
     display: flex;
     flex-direction: column;
-    gap: 44px;
-
-    &_title {
-      width: 764px;
-      max-height: 195.43px;
-      font-family: $text-font;
-      font-weight: normal;
-      font-size: 2.25rem;
-      line-height: 135%;
-      text-transform: uppercase;
-    }
+    gap: 12px;
+    margin-bottom: 1rem;
   }
-}
 
-.play-container {
-  display: flex;
-}
+  td {
+    width: 100%;
+    border-bottom: none;
+    border-right: none;
+  }
 
-.play {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  position: relative;
-  left: -17px;
-}
+  td:last-child {
+    padding-left: 0;
+  }
 
-table {
-  border-collapse: collapse;
-}
+  tr:nth-child(n) {
+    border-bottom: 2px solid #d0d0d0;
+    padding-bottom: 15px;
+  }
 
-td {
-  width: 150px;
-  font-family: $title-font;
-  font-size: 1.25rem;
-  color: $textcolor-dark;
-  opacity: 70%;
-  border-right: 2px #d0d0d0 solid;
-  border-bottom: 2px #d0d0d0 solid;
-}
+  tr.no-break {
+    height: 40px;
+    flex-direction: row;
+    padding-bottom: 0;
+  }
 
-table tr:last-child td {
-  border-bottom: 0;
-}
+  tr.no-break td {
+    width: 43%;
+  }
 
-td:last-child {
-  font-weight: bold;
-  opacity: 100%;
-  padding-left: 1rem;
-  border-right: none;
-}
-
-tr {
-  height: 56px;
-}
-
-.sale span {
-  color: $textcolor-dark;
-}
-
-.lection-question {
-  font-family: $title-font;
-  font-size: 1.25rem;
-  color: $textcomment;
-  line-height: 120%;
-  margin-top: 2rem;
-  position: relative;
-  right: 7px;
-}
+  .lection-question {
+    font-size: 1.125rem;
+    margin-top: 7px;
+    right: 1px;
+  }
 }
 </style>

@@ -112,8 +112,6 @@ export default {
     flex-direction: column;
     margin-bottom: 138px;
 
-    &_page {}
-
     &__headding {
         display: flex;
         justify-content: space-between;

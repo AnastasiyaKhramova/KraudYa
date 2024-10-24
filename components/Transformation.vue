@@ -15,13 +15,58 @@
           <p class="transform__cards_text">{{ transform.desc }}</p>
         </div>
       </div>
-      <img class="decor" src="../assets/img/airplane.png" alt="airplane" />
+      <!-- <img class="decor" src="../assets/img/airplane.png" alt="airplane" /> -->
+      <Slider class="slider">
+        <div class="transform__slide">
+          <p class="transform__cards_number">1</p>
+          <p class="transform__cards_text">
+            Строительство железнодорожной магистрали Москва-Васюки
+          </p>
+          <p class="transform__cards_number">2</p>
+          <p class="transform__cards_text">
+            Открытие фешенебельной гостиницы «Проходная пешка» и других
+            небоскрёбов
+          </p>
+        </div>
+        <div class="transform__slide">
+          <p class="transform__cards_number">3</p>
+          <p class="transform__cards_text">
+            Поднятие сельского хозяйства в радиусе на тысячу километров:
+            производство овощей, фруктов, икры, шоколадных конфет
+          </p>
+        </div>
+        <div class="transform__slide">
+          <p class="transform__cards_number">4</p>
+          <p class="transform__cards_text">Строительство дворца для турнира</p>
+          <p class="transform__cards_number">5</p>
+          <p class="transform__cards_text">
+            Размещение гаражей для гостевого автотранспорта
+          </p>
+        </div>
+        <div class="transform__slide">
+          <p class="transform__cards_number">6</p>
+          <p class="transform__cards_text">
+            Постройка сверхмощной радиостанции для передачи всему миру
+            сенсационных результатов
+          </p>
+        </div>
+        <div class="transform__slide">
+          <p class="transform__cards_number">7</p>
+          <p class="transform__cards_text">
+            Создание аэропорта «Большие Васюки» с регулярным отправлением
+            почтовых самолётов и дирижаблей во все концы света, включая
+            Лос-Анжелос и Мельбурн
+          </p>
+        </div>
+      </Slider>
     </div>
   </section>
 </template>
 
 <script>
 import { v4 as uuidv4 } from "uuid";
+import Slider from "./Slider.vue";
+
 export default {
   data() {
     return {
@@ -41,11 +86,7 @@ export default {
           number: "3",
           desc: "Поднятие сельского хозяйства в радиусе на тысячу километров: производство овощей, фруктов, икры, шоколадных конфет",
         },
-        {
-          id: uuidv4(),
-          number: "4",
-          desc: "Строительство дворца для турнира",
-        },
+        { id: uuidv4(), number: "4", desc: "Строительство дворца для турнира" },
         {
           id: uuidv4(),
           number: "5",
@@ -66,11 +107,16 @@ export default {
   },
 };
 </script>
+
 <style lang="scss" scoped>
+.slider {
+  display: none;
+}
 .transform {
   position: relative;
   margin-top: 112px;
   margin-bottom: 200px;
+
   &_title {
     width: 806px;
     font-family: $text-font;
@@ -88,8 +134,8 @@ export default {
       color: $textcomment;
       text-transform: none;
       padding-left: 7px;
-    line-height: 141%;
-    margin-bottom: 58px;
+      line-height: 141%;
+      margin-bottom: 58px;
     }
   }
 
@@ -169,5 +215,76 @@ export default {
   bottom: -2px;
   right: -63px;
   z-index: 3;
+}
+@media screen and (max-width: 375px) {
+  .slider {
+    display: block;
+    width: 355px;
+    overflow: hidden;
+  }
+  .transform {
+    margin-top: 120px;
+
+    &_title {
+      width: 335px;
+      font-size: 2.25rem;
+      line-height: 110%;
+
+      & span {
+        width: 322px;
+        font-size: 1.125rem;
+        padding-left: 0;
+        margin-top: 14px;
+        line-height: 110%;
+      }
+    }
+
+    &__slide {
+      width: 335px;
+      height: 300px;
+      background: url(../assets/img/background-block.png);
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 231px;
+        width: 100%;
+        height: 300px;
+        background: url(/_nuxt/assets/img/background.png) no-repeat center
+          center;
+        background-size: cover;
+        opacity: 0.1;
+        z-index: 0;
+      }
+    }
+
+    &__cards {
+      display: none;
+
+      &_number {
+        min-width: 36px;
+        height: 36px;
+        background: #ffffff;
+        border-radius: 18px;
+        font-family: "Golos Text", sans-serif;
+        font-weight: 600;
+        font-size: 1.25rem;
+        color: #313131;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+        position: relative;
+      }
+
+      &_text {
+        font-family: $title-font;
+        font-weight: 500;
+        font-size: 1.25rem;
+        color: $textcolor-dark;
+        max-width: 446px;
+      }
+    }
+  }
 }
 </style>
