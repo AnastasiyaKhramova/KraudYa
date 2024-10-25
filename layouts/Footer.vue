@@ -30,4 +30,16 @@
     }
 }
 
+@media screen and  (max-width: 375px){
+    .footer {
+    height: 198px;
+    
+    & h3 {
+        padding: 78px 20px;
+        line-height: 120%;
+    }
+}
+    
+}
+
 </style>

@@ -230,6 +230,7 @@ export default {
 @media screen and (max-width: 375px) {
   .transform {
     margin-top: 120px;
+    margin-bottom: 186px;
 
     &_title {
       width: 335px;

@@ -229,7 +229,7 @@ tr {
 
 @media screen and (max-width: 375px) {
   .lections {
-    margin-top: 49px;
+    margin-top: 76px;
     gap: 24px;
     height: 1773px;
   }

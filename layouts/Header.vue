@@ -140,7 +140,7 @@ export default {
 
 @media screen and (max-width: 375px) {
   .header {
-    height: 774px;
+    height: 747px;
     background: url(../assets/img/main_phone.png) no-repeat center center;
 
     &::before {
