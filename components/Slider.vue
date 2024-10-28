@@ -3,15 +3,15 @@
     <div class="slides" ref="slides">
       <slot></slot>
     </div>
-    <div class="pagination-container">
-      <button class="slider-button prev" @click="prevSlide">
+    <div class="pagination-container"> 
+      <button class="slider-button prev" @click="prevSlide" :disabled="isPrevDisabled">
         <img src="assets/img/left.svg" alt="Previous" />
       </button>
       <div class="pagination">
         <button v-for="index in totalSlides" :key="index" class="pagination__dot"
           :class="{ active: currentIndex === index - 1 }" @click="goToSlide(index - 1)"></button>
       </div>
-      <button class="slider-button next" @click="nextSlide">
+      <button class="slider-button next" @click="nextSlide" :disabled="isNextDisabled">
         <img src="assets/img/right.svg" alt="Next" />
       </button>
     </div>
@@ -29,6 +29,12 @@ export default {
     totalSlides() {
       return this.$slots.default ? this.$slots.default().length : 0;
     },
+    isPrevDisabled() {
+      return this.currentIndex === 0;
+    },
+    isNextDisabled() {
+      return this.currentIndex === this.totalSlides - 1;
+    },
   },
   methods: {
     updateSlidePosition() {
@@ -38,8 +44,6 @@ export default {
     nextSlide() {
       if (this.currentIndex < this.totalSlides - 1) {
         this.currentIndex += 1;
-      } else {
-        this.currentIndex = 0;
       }
       this.updateSlidePosition();
     },
@@ -120,10 +124,16 @@ export default {
     border: none;
     border-radius: 50px;
     cursor: pointer;
-  }
 
-  .slider-button.prev {
-    background: #D9D9D9;
+    &:hover {
+      background-color: $color-light;
+      border: none;
+    }
+
+    &:disabled {
+      background-color: #d3d3d3;
+      cursor: not-allowed;
+    }
   }
 }
 </style>

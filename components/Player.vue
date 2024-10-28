@@ -148,6 +148,11 @@ export default {
     border: 1px solid $textcolor-dark;
     border-radius: 50px;
     cursor: pointer;
+
+    &:hover {
+      background-color: $color-light;
+      border: none;
+    }
 }
 
 .slider {
