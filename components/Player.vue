@@ -189,12 +189,18 @@ export default {
         width: 113px;
         height: 35px;
         border: 1px solid $textcomment;
+        background: $backgroundcolor;
         border-radius: 62px;
         color: $textcomment;
         font-family: $title-font;
         font-size: 1rem;
         font-weight: 500;
         text-align: center;
+
+        &:hover {
+          background-color: $textcomment;
+          color: $textcolor-light;
+        }
     }
 }
 
